@@ -2,7 +2,7 @@ const { z } = require("zod");
 const bcrypt = require("bcrypt");
 const Admin = require("../models/admin.js");
 const jwt = require("jsonwebtoken");
-const jwt_adminSecret = "codersAdmin";
+const jwt_adminSecret = process.env.ADMIN_SECRETE;
 
 module.exports.adminSignup = async (req, res, next) => {
   const validation = z.object({

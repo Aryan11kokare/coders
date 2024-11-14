@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const User = require("../models/user.js");
 const jwt = require("jsonwebtoken");
 const { userAuth } = require("../middelware.js");
-const jwt_userSecret = "coderUsers";
+const jwt_userSecret = process.env.USER_SECRETE;
 
 module.exports.signup = async (req, res, next) => {
   const validation = z.object({

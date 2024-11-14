@@ -3,8 +3,8 @@ const Course = require("./models/course.js");
 const jwt = require("jsonwebtoken");
 const User = require("./models/user.js");
 const ExpressError = require("./utils/ExpressError.js");
-const jwt_adminSecret = "codersAdmin";
-const jwt_userSecret = "coderUsers";
+const jwt_adminSecret = process.env.ADMIN_SECRETE;
+const jwt_userSecret = process.env.USER_SECRETE;
 
 module.exports.allCheckAuth = async (req, res, next) => {
   if (req.cookies) {
@@ -37,7 +37,7 @@ module.exports.adminAuth = async (req, res, next) => {
     req.flash("error", "only admins can create the course !");
     return res.redirect(`/create`);
   }
-  
+
   const token = req.cookies.admin_token;
   if (!token) {
     res.json("token not found");
