@@ -1,0 +1,67 @@
+<% layout("layout/boilerPlate.ejs") %>
+<div class="detailsFirst">
+  <div class="detailsLeft" style="margin-top: 2rem;">
+    <h2><%= course.title %></h2>
+    <br />
+    <h4>Duratio : <%= course.duration %></h4>
+    <br />
+    <h4>Starts 2nd August 2024</h4>
+    <br />
+    <p><%= course.description %></p>
+  </div>
+  <div class="card detailsCard">
+    <img src="<%= course.image %>" class="card-img-top detailsImg" alt="..." />
+    <div class="card-body">
+      <p class="card-text">Price</p>
+      <h5 class="card-title">&#8377; <%= course.price %> /-</h5>
+      <a href="#" class="btn btn-primary detailsBtn">Buy Now</a>
+      <% if(currAdmin && currAdmin._id.equals(course.owner._id)){ %>
+      <form method="post" action="/course/<%= course._id %>?_method=DELETE">
+        <button class="deleteBtn">Delete</button>
+      </form>
+        <% }%>
+    </div>
+  </div>
+</div>
+<br>
+<hr style="margin-left: 3rem; margin-right: 3rem;"/>
+<br>
+<div class="syllabus newsyllabus">
+  <h3>syllabus</h3>
+  <br />
+  <h5>overview : </h5><p><%= course.syllabus.course.overview %></p>
+  <h5>prerequisites : </h5><p><%= course.syllabus.course.prerequisites %></p>
+  <br />
+  <ol class=" olsyllabus">
+    <% for(let obj of course.syllabus.modules){%>
+    <b><li><%= obj.title %> :-</li></b>
+    <p><%= obj.topics %></p>
+    <%} %>
+  </ol>
+</div>
+<br>
+<hr style="margin-left: 3rem; margin-right: 3rem;">
+<br />
+<div class="Project">
+  <h3>Projects</h3>
+  <br>
+  <ul>
+    <% for(let obj of course.syllabus.project){%>
+    <b><li><%= obj.title %> :-</li></b>
+    <p><%= obj.description %></p>
+    <%} %>
+  </ul>
+</div>
+<br>
+<hr style="margin-left: 3rem; margin-right: 3rem;">
+<br>
+<div class="Project">
+  <h3>References</h3>
+  <br>
+
+    <% for(let obj of course.syllabus.references){%>
+    <a href="<%= obj %>" style="cursor: pointer; text-decoration: underline !important; color: rgb(6, 126, 255) !important;"><%= obj %></a><br>
+    <br>
+    <%} %>
+
+</div>

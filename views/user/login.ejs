@@ -1,0 +1,59 @@
+<% layout("layout/boilerPlate.ejs") %>
+<div class="login">
+  <div class="loginFormL">
+    <!-- <img src="https://cdn.dribbble.com/users/1172503/screenshots/4505740/media/d45f2014e49844aec6c56e5a7267948e.gif" alt=""> -->
+    <img
+      src="https://mir-s3-cdn-cf.behance.net/project_modules/hd/06f21a161921919.63cd7887d0a70.gif"
+      alt=""
+    />
+  </div>
+  <div class="loginFormR">
+    <div class="loginText">
+      <h2>Login</h2>
+      <p>Welcome to Coders</p>
+    </div>
+    <form method="post" action="/signin" class="needs-validation" novalidate>
+      <div class="email">
+        <label class="form-label" for="email">Email</label><br />
+        <input class="form-control" type="email" name="email" id="email" required />
+      </div>
+      <div class="password">
+        <label class="form-label" for="password">Password</label><br />
+        <input class="form-control" type="text" name="password" id="password" required />
+      </div>
+      <br />
+      <div class="admin">
+        <label class="form-label" for="admin">login as admin : </label
+        >&nbsp;&nbsp;&nbsp;
+        <input
+          onclick="change()"
+          type="checkbox"
+          class="chekadmin"
+          id="admin"
+        />
+      </div>
+      <br />
+      <button>login</button>
+    </form>
+    <br />
+    <div>
+      <p>
+        Don't have an account?
+        <a href="/signup" style="color: #f58020 !important"> Sign Up</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function change() {
+    let checkBox = document.getElementById("admin");
+    let form = document.querySelector("form");
+
+    if (checkBox.checked == true) {
+      form.action = "/admin/signin";
+    } else {
+      form.action = "/signin";
+    }
+  }
+</script>

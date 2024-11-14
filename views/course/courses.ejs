@@ -1,0 +1,15 @@
+<% layout("layout/boilerPlate.ejs") %>
+<div class="courses">
+  <% for( course of allCourse){ %>
+  <div class="card courseCard">
+    <img src="<%= course.image %>" class="card-img-top cardimage" alt="..." />
+    <div class="card-body pad">
+      <h5 class="card-title" ><%= course.title %></h5>
+      <p class="card-text price">&#8377;&nbsp;<%= course.price.toLocaleString("en-IN")%></p>
+      <a href="/details/<%= course._id %>" class="btn cardBtn btn-primary"
+        >View details</a
+      >
+    </div>
+  </div>
+  <% } %>
+</div>

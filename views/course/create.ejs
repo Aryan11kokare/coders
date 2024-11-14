@@ -1,0 +1,240 @@
+<% layout("layout/boilerPlate.ejs") %>
+
+<div class="create">
+  <h2>Create new course</h2>
+  <form
+    method="post"
+    action="/course"
+    class="createForm needs-validation"
+    novalidate
+  >
+    <div class="title">
+      <label class="form-label" for="title">Title</label><br />
+      <input
+        required
+        class="form-control"
+        type="text"
+        name="title"
+        id="title"
+        minlengthlenght="4"
+      />
+      <div class="invalid-feedback">
+        Please provide a valid Title of minimum 4 length.
+      </div>
+    </div>
+    <br />
+    <div class="image">
+      <label class="form-label" for="image">Image URL/Link</label><br />
+      <input required class="form-control" type="url" name="image" id="image" />
+    </div>
+    <br />
+    <div class="description">
+      <label class="form-label" for="description">Description</label><br />
+      <textarea
+        name="description"
+        rows="3"
+        cols="50"
+        id="description"
+        required
+        class="form-control"
+        minlength="4"
+      ></textarea>
+    </div>
+    <br />
+    <div class="price">
+      <label class="form-label" for="price">Price</label><br />
+      <input
+        required
+        class="form-control"
+        type="number"
+        name="price"
+        id="price"
+      />
+      <div class="invalid-feedback">
+        Please provide a valid Price of minimum 10 rupees.
+      </div>
+    </div>
+    <br />
+    <hr />
+    <h2>Syllabus</h2>
+    <div class="overview">
+      <label class="form-label" for="overview">Overview</label><br />
+      <textarea
+        name="syllabus[course][overview]"
+        rows="3"
+        cols="50"
+        id="overview"
+        class="form-control"
+        minlength="10"
+        required
+      ></textarea>
+      <div class="invalid-feedback">
+        Please provide a valid Overview of minimum 10 or 20 length.
+      </div>
+    </div>
+    <br />
+    <div class="prerequisites">
+      <label class="form-label" for="prerequisites">Prerequisites</label><br />
+      <textarea
+        name="syllabus[course][prerequisites]"
+        rows="3"
+        cols="50"
+        id="prerequisites"
+        class="form-control"
+        minlength="10"
+        required
+      ></textarea>
+      <div class="invalid-feedback">
+        Please provide a valid Prerequisites of minimum 10 or 20 length.
+      </div>
+    </div>
+    <hr />
+    <br />
+    <h2>Chapters</h2>
+    <div class="moduelsDiv">
+      <div class="module">
+        <label class="form-label" for="title">Title</label><br />
+        <input
+          required
+          class="form-control"
+          type="text"
+          name="syllabus[modules][0][title]"
+          minlength="4"
+        /><div class="invalid-feedback">Please Enter the title of chapter.</div><br />
+  
+        <label class="form-label" for="topics">Topics</label><br />
+        <input
+          required
+          class="form-control"
+          type="text"
+          name="syllabus[modules][0][topics]"
+          minlength="4"
+        />
+        <div class="invalid-feedback">Please Enter the topics of chapter.</div>
+        <br /><br />
+      </div>
+    </div>
+    <button type="button" class="createBtnadd" onclick="addModule()">
+      Add Chapter
+    </button>
+    <br />
+    <hr />
+    <br />
+    <h2>projects</h2>
+    <div id="newProject">
+      <div class="project">
+        <label class="form-label" for="title">Title</label><br />
+        <input
+          required
+          class="form-control"
+          type="text"
+          name="syllabus[project][0][title]"
+          id="title"
+          minlength="4"
+        />
+        <div class="invalid-feedback">Please Enter the title of project.</div>
+        <br />
+        <label class="form-label" for="description">Description</label><br />
+        <input
+          required
+          class="form-control"
+          type="text"
+          name="syllabus[project][0][description]"
+          id="description"
+          minlength="4"
+        />
+        <div class="invalid-feedback">Please Enter the title of description.</div>
+      </div>
+      <br /><br />
+    </div>
+    <br /><br />
+    <button type="button" class="createBtnadd" onclick="addProjects()">
+      Add Projects
+    </button>
+    <br />
+    <hr />
+    <br />
+    <div class="references">
+      <label class="form-label" for="references">References</label><br />
+      1 :-
+      <input
+        required
+        class="form-control"
+        type="text"
+        name="syllabus[references][0]"
+        id="references"
+      />
+      <div class="invalid-feedback">Please add the one reference for user.</div>
+      <br />
+      2 :-
+      <input
+        class="form-control"
+        type="text"
+        name="syllabus[references][1]"
+        id="references"
+      />
+      <br />
+      3 :-
+      <input
+        class="form-control"
+        type="text"
+        name="syllabus[references][2]"
+        id="references"
+      />
+    </div>
+    <br />
+    <div class="duration">
+      <label class="form-label" for="duration">Duration</label><br />
+      <input
+        required
+        class="form-control"
+        type="text"
+        name="duration"
+        id="duration"
+      />
+    </div>
+    <br /><br />
+
+    <button type="submit" class="sumitbtn">Sumit</button>
+  </form>
+</div>
+
+<script>
+  function addModule() {
+    let modulecount = document.querySelectorAll(".module").length;
+    let newModule = document.createElement("div");
+    newModule.classList.add("module");
+    newModule.innerHTML = `
+    <label class="form-label" for="title">title</label><br />
+      <input required class="form-control" type="text" name="syllabus[modules][${modulecount}][title]" /><br />
+      <label class="form-label" for="topics">topics</label><br />
+      <input required class="form-control" type="text" name="syllabus[modules][${modulecount}][topics]" /><br /><br />
+    `;
+    document.querySelector(".moduelsDiv").appendChild(newModule);
+  }
+
+  function addProjects() {
+    let projectCount = document.querySelectorAll(".project").length;
+    let newProjectDiv = document.createElement("div");
+    newProjectDiv.classList.add("project");
+    newProjectDiv.innerHTML = `
+     <label class="form-label" for="title">title</label><br />
+        <input
+          required
+          class="form-control"
+          type="text"
+          name="syllabus[project][${projectCount}][title]"
+          id="title"
+        /> <br>
+        <label class="form-label" for="description">description</label><br />
+        <input
+          required
+          class="form-control"
+          type="text"
+          name="syllabus[project][${projectCount}][description]"
+          id="description"
+        /><br /><br />`;
+
+    document.querySelector("#newProject").appendChild(newProjectDiv);
+  }
+</script>

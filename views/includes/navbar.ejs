@@ -1,0 +1,47 @@
+<nav class="sticky-top">
+  <div class="bigleft">
+    <div class="left">
+      <a href="/"><h1 id="logo">Coders</h1></a>
+    </div>
+    <div class="mid" id="route">
+      <a href="/"><h4>Home</h4></a>
+      <a href="/course"><h4>Courses</h4></a>
+      <a href="#"><h4>Contact</h4></a>
+      <a href="#"><h4>About</h4></a>
+    </div>
+  </div>
+  <div class="right" id="rightbtn">
+    <% if(!currUser && !currAdmin){ %>
+    <a href="/login"><button>Login</button></a>
+    <a href="/signup"><button>Signup</button></a>
+    <% }%> <% if(currUser){ %>
+    <a href="/logout"><button>Logout</button></a>
+    <% }%> <% if(currAdmin){ %>
+    <a href="/create"><button class="createbtn">Create</button></a>
+    <a href="/admin/logout"><button>Logout</button></a>
+    <% }%>
+  </div>
+  <i onclick="show()" class="fa-solid fa-bars"></i>
+</nav>
+
+<script>
+  function show() {
+    let mid = document.getElementById("route");
+    let right = document.getElementById("rightbtn");
+    if (mid.style.display == "none") {
+      mid.style.display = "inline";
+      mid.classList.add("newmid");
+    } else {
+      mid.style.display = "none";
+      mid.classList.remove("newmid");
+    }
+
+    if (right.style.display == "none") {
+      right.style.display = "inline";
+      right.classList.add("newright");
+    } else {
+      right.style.display = "none";
+      right.classList.remove("newright");
+    }
+  }
+</script>

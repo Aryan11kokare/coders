@@ -1,0 +1,654 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none !important;
+  color: black !important;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+/* navbar styling  */
+nav {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  height: 13vh !important;
+  width: 100vw !important;
+  padding: 0 3%;
+  background-color: white;
+}
+
+.bigleft {
+  display: flex;
+  gap: 100px;
+  align-items: center;
+}
+
+.mid {
+  display: flex;
+  gap: 30px;
+}
+
+nav h1 {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.mid h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgb(103, 101, 101);
+  cursor: pointer;
+}
+
+.mid h4:hover {
+  color: #fcb529;
+  text-decoration: underline;
+}
+
+.right button {
+  height: 2.5rem;
+  width: 6.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #f0f0f0;
+}
+
+.createbtn {
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  background-image: linear-gradient(to right, #f7ffa3, rgb(250, 233, 74));
+}
+
+/* footer styling */
+.footer {
+  height: 10rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(224, 223, 223);
+  border-top-right-radius: 1.5rem;
+  border-top-left-radius: 1.5rem;
+}
+
+.footer-media,
+.footer-comp,
+.footer-links {
+  width: 100%;
+}
+
+.footer-media {
+  font-size: 2rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: black;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* index page content styling */
+.main {
+  height: 80vh;
+  width: 100vw;
+  display: flex;
+}
+
+.mainLeft {
+  height: 100%;
+  width: 50%;
+  padding: 4% 3%;
+}
+
+.mainLeft h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: black !important;
+}
+
+.mainLeft p {
+  font-size: 1.2rem;
+  color: rgb(103, 101, 101);
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.mainRight {
+  height: 100%;
+  width: 50%;
+}
+
+.mainRight img {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+}
+
+.mainButtons button {
+  height: 2.5rem;
+  width: 12rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  background-image: linear-gradient(to right, #f58020, yellow);
+}
+
+/* courses show page styling */
+.courses {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.pad {
+  padding: 0 !important;
+  margin-top: 1rem;
+}
+
+.courseCard {
+  width: 24rem;
+  height: 30rem !important;
+  margin: 2rem;
+  border: none !important;
+}
+
+.cardimage {
+  height: 16rem;
+  width: 100%;
+  border-radius: 1.2rem !important;
+}
+.card-title {
+  font-size: 1.1rem !important;
+  font-weight: 500 !important;
+  color: black !important;
+}
+.cardBtn {
+  background-image: linear-gradient(to right, #f5b520, yellow);
+  border: none !important;
+}
+
+.price {
+  font-weight: 400 !important;
+  color: black !important;
+}
+
+/* signup page styling  */
+
+.signup {
+  width: 100vw;
+  background-image: url("https://img.freepik.com/premium-vector/vector-abstract-stylish-orange-yellow-waves-background_746838-233.jpg?semt=ais_hybrid");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.signupForm {
+  height: 100%;
+  width: 40%;
+  margin: 1rem 30rem 0rem 10rem;
+  padding: 1rem 2rem;
+}
+
+.signupForm label {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  color: black;
+  text-align: left !important;
+}
+
+.signupForm input {
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 0.5rem;
+}
+.signupText {
+  text-align: center;
+}
+
+.signupText p {
+  color: rgb(103, 101, 101);
+}
+
+.signupForm button {
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  background-image: linear-gradient(to right, #f58020, yellow);
+}
+.admin {
+  display: flex;
+  align-items: center;
+}
+.chekadmin {
+  height: 1.2rem !important;
+  width: 1.2rem !important;
+}
+
+/* login page styling */
+.login {
+  height: 80vh;
+  width: 100vw;
+  display: flex;
+}
+
+.loginFormR {
+  height: 100%;
+  width: 38%;
+  margin: 1.5rem 5rem 0rem 5rem;
+  padding: 1rem 2rem;
+  /* background-color: white; */
+}
+
+.loginFormR input {
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.loginFormR label {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  color: black;
+  text-align: left !important;
+}
+
+.loginText {
+  text-align: center;
+}
+
+.loginFormR button {
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  background-image: linear-gradient(to right, #f58020, yellow);
+}
+
+.loginFormL {
+  height: 100%;
+  width: 50%;
+}
+
+.loginFormL img {
+  height: 100%;
+  width: 100%;
+}
+
+/* course details page styling */
+
+.detailsFirst {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 1rem;
+}
+
+.detailsFirst h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: black !important;
+}
+
+.detailsCard {
+  width: 30%;
+  height: 20%;
+  border-radius: 1.2rem !important;
+}
+
+.deleteBtn {
+  width: 100%;
+  height: 2.2rem;
+  border-radius: 0.5rem;
+  border: none !important;
+  color: white !important;
+  background-color: black !important;
+  margin-top: 0.5rem;
+}
+
+.detailsImg {
+  border-top-left-radius: 1.2rem !important ;
+  border-top-right-radius: 1.2rem !important ;
+}
+
+.detailsBtn {
+  width: 100%;
+  border: none !important;
+  background-image: linear-gradient(
+    to right,
+    rgb(23, 112, 23),
+    rgb(35, 179, 35),
+    rgb(147, 229, 33)
+  );
+}
+
+.detailsLeft {
+  width: 50%;
+  margin-left: 1rem;
+}
+
+.syllabus,
+.Project {
+  margin-left: 6rem;
+}
+
+.syllabus h5 {
+  color: black !important;
+}
+
+.syllabus h3,
+.Project h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: black !important;
+}
+
+.syllabus p,
+.Project p {
+  letter-spacing: 1px !important;
+  text-align: start;
+}
+
+/* error page stylling  */
+.error {
+  height: 80vh;
+  width: 100vw;
+  align-items: center;
+}
+
+.error img {
+  height: 20rem;
+  width: 30rem;
+  margin-left: 25rem !important;
+  text-align: center;
+}
+
+.error h2 {
+  font-size: 5rem;
+  font-weight: 800;
+  color: rgb(255, 196, 0);
+  text-shadow: 5px 5px black;
+  text-align: center;
+}
+.flash {
+  position: fixed;
+  top: 6rem;
+}
+
+/* crete form page styling */
+.create {
+  width: 100vw;
+  padding: 2rem;
+}
+
+.create h2 {
+  text-align: center;
+  color: #000000;
+}
+
+.createForm {
+  width: 60%;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fff; /* White background for the form */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 0.5px solid #ddd;
+}
+
+.createForm input {
+  width: 100%;
+}
+
+.createForm p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: black;
+}
+
+.createForm label {
+  display: block !important;
+  margin-bottom: 5px !important;
+  color: #4b4a4a !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.2px;
+}
+
+.createBtnadd {
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #f8ff00 0%, #3ad59f 100%);
+}
+
+.create input,
+.create textarea {
+  width: 100% !important;
+  padding: 12px !important;
+  margin-top: 5px !important;
+  border: 0.5px solid #ccc;
+  border-radius: 4px !important;
+  background-color: #f4f4f4 !important; /* Light grey background for inputs */
+  font-size: 16px !important;
+}
+
+.fa-bars {
+  display: none !important;
+}
+
+.sumitbtn {
+  background-color: #f9c700; /* Bright yellow background */
+  width: 100%;
+  color: rgb(7, 5, 5);
+  border: none;
+  padding: 14px 22px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+@media (max-width: 450px) {
+  nav {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    height: 8vh !important;
+    width: 100vw !important;
+    padding: 1% 4%;
+    background-color: white;
+    /* border-bottom: 0.05px solid rgb(199, 199, 199); */
+  }
+
+  .mid,
+  .right {
+    display: none;
+  }
+
+  .fa-bars {
+    display: inline !important;
+    font-size: 2rem !important;
+  }
+  .newmid {
+    display: inline !important;
+    position: fixed !important;
+    top: 5rem !important;
+    right: 1rem !important;
+    height: 8rem !important;
+    width: 10rem !important;
+    padding: 1rem !important;
+    background-color: black;
+    border-radius: 0.5rem !important;
+  }
+
+  .newmid h4 {
+    color: white !important;
+  }
+
+  .newright {
+    display: inline-block !important;
+    position: fixed !important;
+    top: 14rem !important;
+    right: 1rem !important;
+    height: 10rem !important;
+    width: 10rem !important;
+    padding: 1rem !important;
+    background-color: black;
+    border-radius: 0.5rem !important;
+  }
+
+  .newright button {
+    margin-top: 1rem !important;
+  }
+
+  .main {
+    display: inline-block !important;
+    margin-top: 2rem;
+  }
+
+  .mainRight {
+    display: none !important;
+  }
+  .mainLeft {
+    width: 100vw !important;
+    height: 100vh !important;
+  }
+
+  .mainLeft h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    color: black !important;
+  }
+
+  .mainLeft p {
+    font-size: 1.2rem;
+    color: rgb(103, 101, 101);
+    text-align: left;
+    margin-top: 1rem;
+  }
+
+  .mainButtons button {
+    height: 3rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    background-image: linear-gradient(to right, #f58020, yellow);
+  }
+
+  .detailsFirst {
+    display: inline !important;
+  }
+
+  .detailsLeft {
+    width: 100vw !important;
+  }
+
+  .detailsCard {
+    width: 90vw !important;
+    margin-top: 5rem !important;
+    margin-bottom: 3rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .newsyllabus {
+    width: 100vw !important;
+    margin: auto 1rem !important;
+  }
+
+  .syllabus p {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+
+  ol {
+    margin-left: -1rem !important;
+    margin-right: 1rem !important;
+  }
+
+  .Project {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+
+  .loginFormL {
+    display: none !important;
+  }
+
+  .login {
+    margin-top: 3rem !important;
+    margin-bottom: -6rem !important;
+  }
+
+  .signupForm {
+    width: 100vw !important;
+    margin: 3rem auto 7rem auto !important;
+  }
+
+  .loginFormR {
+    width: 100vw !important;
+    margin: auto !important;
+  }
+
+  .create {
+    width: 100vw;
+    padding: 0 !important;
+  }
+
+  .createForm {
+    width: 100% !important;
+    margin: 50px auto !important;
+  }
+
+  .error {
+    height: 70vh;
+    width: 100vw;
+    align-items: center;
+  }
+
+  .error img {
+    height: 18rem;
+    width: 25rem;
+    margin: auto !important;
+    text-align: center;
+  }
+
+  .error h2 {
+    font-size: 5rem;
+    font-weight: 800;
+    color: rgb(255, 196, 0);
+    text-shadow: 5px 5px black;
+    text-align: center;
+  }
+}

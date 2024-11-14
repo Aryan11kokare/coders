@@ -1,0 +1,76 @@
+<% layout("layout/boilerPlate.ejs") %>
+<div class="signup">
+  <div class="signupForm">
+    <div class="signupText">
+      <h2>Signup</h2>
+      <p>Create New Account</p>
+    </div>
+    <form method="post" action="/signup" class="needs-validation" novalidate>
+      <div class="username">
+        <label class="form-label" for="username">Username</label><br />
+        <input
+          class="form-control"
+          type="text"
+          name="username"
+          id="username"
+          min="3"
+          required
+        />
+      </div>
+      <div class="email">
+        <label class="form-label" for="email">Email</label><br />
+        <input
+          class="form-control"
+          type="email"
+          name="email"
+          id="email"
+          min="3"
+          required
+        />
+      </div>
+      <div class="password">
+        <label class="form-label" for="password">Password</label><br />
+        <input
+          class="form-control"
+          type="text"
+          name="password"
+          id="password"
+          min="3"
+          required
+        />
+      </div>
+      <div class="admin">
+        <label class="form-label" for="admin">Create accout as admin : </label
+        >&nbsp;&nbsp;&nbsp;
+        <input
+          onclick="change()"
+          type="checkbox"
+          class="chekadmin"
+          id="admin"
+        />
+      </div>
+      <br />
+      <button>Signup</button>
+    </form>
+    <br />
+    <div>
+      <p>
+        Already have an account?
+        <a href="/login" style="color: #f58020 !important"> Log in</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function change() {
+    let checkBox = document.getElementById("admin");
+    let form = document.querySelector("form");
+
+    if (checkBox.checked == true) {
+      form.action = "/admin/signup";
+    } else {
+      form.action = "/signup";
+    }
+  }
+</script>
