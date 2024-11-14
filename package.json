@@ -1,5 +1,8 @@
 {
-  "name": "codes",
+  "engines": {
+    "node": "21.7.1"
+  },
+  "name": "coders",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
